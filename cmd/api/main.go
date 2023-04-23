@@ -7,7 +7,11 @@ const (
 )
 
 func main() {
-	err := router.RunApp(PORT, router.AppRouter())
+	appRouter, err := router.AppRouter()
+	if err != nil {
+		panic(err)
+	}
+	err = router.RunApp(PORT, appRouter)
 	if err != nil {
 		panic(err)
 	}

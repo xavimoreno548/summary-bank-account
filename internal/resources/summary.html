@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <title>Summary data</title>
+</head>
+<body>
+<h1>Summary data table</h1>
+<table>
+    <thead>
+    <p>Total Balance: {{.TotalBalance}}</p>
+    <p>Average debit amount: {{.AverageDebitAmount}}</p>
+    <p>Average credit amount: {{.AverageCreditAmount}}</p>
+    <p>Number of transactions by month:</p>
+    <tr>
+        <th>Month</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range $i, $trx := .NumberOfTransactions}}
+    <tr>
+        <td>{{$trx.Month}}</td>
+        <td>{{$trx.Quantity}}</td>
+    </tr>
+    {{end}}
+    </tbody>
+</table>
+</body>
+</html>
